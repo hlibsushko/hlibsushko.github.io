@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hlib Sushko — Program & Project Manager</title>
+<title>Hlib Sushko - Program & Project Manager</title>
 <meta name="description" content="PMP-certified Program & Project Manager with PhD in CS. $20M+ tech programs, 80+ person teams, Fortune 500 clients. Based in Wrocław, Poland.">
 <meta name="keywords" content="Program Manager, Project Manager, PMP, SAFe, Agile, Delivery Manager, Hlib Sushko">
-<meta property="og:title" content="Hlib Sushko — Program & Project Manager">
+<meta property="og:title" content="Hlib Sushko - Program & Project Manager">
 <meta property="og:description" content="PMP-certified Program & Project Manager. $20M+ budgets, Fortune 500 clients, PhD in Computer Science.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232557a7'/%3E%3Cpath d='M9 16.5l5 5 9-11' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -52,14 +53,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* --- NAV --- */
   nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    background: var(--bg);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(12px);
     background: rgba(250,250,248,0.85);
@@ -97,7 +96,6 @@
 
   .nav-links a:hover { color: var(--accent); }
 
-  /* --- MAIN --- */
   main {
     max-width: var(--max-w);
     margin: 0 auto;
@@ -110,30 +108,61 @@
     padding-bottom: 3rem;
   }
 
+  .hero-top {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+    border: 3px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 600px) {
+    .hero-top {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .hero-photo {
+      width: 130px;
+      height: 130px;
+    }
+    .hero-stats { justify-content: center; }
+    .hero-cta { justify-content: center; }
+  }
+
   .hero-eyebrow {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--accent);
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
   }
 
   .hero h1 {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
     font-weight: 400;
     line-height: 1.2;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     color: var(--text);
   }
 
   .hero-sub {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     max-width: 600px;
     line-height: 1.7;
-    margin-bottom: 2rem;
   }
 
   .hero-stats {
@@ -209,16 +238,6 @@
     background: var(--border);
   }
 
-  /* --- ABOUT --- */
-  .about-text {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    max-width: 650px;
-    line-height: 1.75;
-  }
-
-  .about-text p + p { margin-top: 1rem; }
-
   /* --- HIGHLIGHTS --- */
   .highlights {
     display: grid;
@@ -249,6 +268,64 @@
     font-size: 0.82rem;
     color: var(--text-secondary);
     line-height: 1.6;
+  }
+
+  /* --- SERVICES --- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.2s;
+  }
+
+  .service-card:hover { border-color: var(--accent); }
+
+  .service-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .service-card h3 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .service-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.8rem;
+  }
+
+  .service-tag {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
   }
 
   /* --- EXPERIENCE --- */
@@ -364,7 +441,6 @@
     flex-shrink: 0;
   }
 
-  /* --- FOOTER --- */
   footer {
     max-width: var(--max-w);
     margin: 0 auto;
@@ -377,12 +453,6 @@
     color: var(--text-tertiary);
   }
 
-  .footer-text a {
-    color: var(--text-secondary);
-    text-decoration: none;
-  }
-
-  /* --- OPEN TO --- */
   .open-to {
     background: var(--accent-light);
     border: 1px solid var(--accent);
@@ -414,8 +484,8 @@
     <a href="#" class="nav-name">Hlib Sushko</a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#services">Services</a>
       <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -425,9 +495,14 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero-eyebrow">Program & Project Manager</div>
-    <h1>I deliver complex technology programs — on time, on budget, at scale.</h1>
-    <p class="hero-sub">PMP-certified leader with a PhD in Computer Science. I run multi-project portfolios across fintech, insurance, manufacturing, and retail — managing distributed teams and Fortune&nbsp;500 stakeholder relationships.</p>
+    <div class="hero-top">
+      <img src="photo.jpeg" alt="Hlib Sushko" class="hero-photo">
+      <div>
+        <div class="hero-eyebrow">Program & Project Manager</div>
+        <h1>I deliver complex technology programs - on time, on budget, at scale.</h1>
+        <p class="hero-sub">PMP-certified leader with a PhD in Computer Science. I run multi-project portfolios across fintech, insurance, manufacturing, and retail - managing distributed teams and Fortune&nbsp;500 stakeholder relationships.</p>
+      </div>
+    </div>
 
     <div class="hero-stats">
       <div class="stat-item">
@@ -473,11 +548,11 @@
       </div>
       <div class="highlight-card">
         <h3>Agile at Scale</h3>
-        <p>Hands-on SAFe, Scrum, and Kanban implementation across organizations. Not just frameworks — building the delivery muscle through coaching and practice.</p>
+        <p>Hands-on SAFe, Scrum, and Kanban implementation across organizations. Not just frameworks - building the delivery muscle through coaching and practice.</p>
       </div>
       <div class="highlight-card">
         <h3>Stakeholder Management</h3>
-        <p>Operating at the intersection of business and engineering — translating technical complexity into clear executive communication at VP/Director level.</p>
+        <p>Operating at the intersection of business and engineering - translating technical complexity into clear executive communication at VP/Director level.</p>
       </div>
       <div class="highlight-card">
         <h3>Team Building & Mentoring</h3>
@@ -487,7 +562,53 @@
 
     <div class="open-to">
       <div class="open-to-title">Open to opportunities</div>
-      <p>Program Manager, Senior Program Manager, Head of PMO, Delivery Director — remote or hybrid in Europe. Currently based in Wrocław, Poland.</p>
+      <p>Program Manager, Senior Program Manager, Head of PMO, Delivery Director - remote or hybrid in Europe. Currently based in Wroclaw, Poland.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2 class="section-title">Services</h2>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">&#9670;</span>
+        <h3>Program & Project Management</h3>
+        <p>End-to-end delivery of complex tech programs. From roadmap planning and team setup through execution, risk management, and stakeholder reporting. Budgets from $500K to $20M+.</p>
+        <div class="service-tags">
+          <span class="service-tag">Roadmapping</span>
+          <span class="service-tag">P&L ownership</span>
+          <span class="service-tag">Risk management</span>
+          <span class="service-tag">PMO setup</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">&#9656;</span>
+        <h3>Agile & SAFe Coaching</h3>
+        <p>Practical coaching for teams and organizations adopting Agile, Scrum, Kanban, or SAFe. Not theory slides - hands-on work with your teams to build real delivery cadence and predictability.</p>
+        <div class="service-tags">
+          <span class="service-tag">Scrum</span>
+          <span class="service-tag">SAFe 6.0</span>
+          <span class="service-tag">Kanban</span>
+          <span class="service-tag">Team training</span>
+          <span class="service-tag">Agile transformation</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">&#9678;</span>
+        <h3>Executive & Startup Advisory</h3>
+        <p>Advisory for C-level executives and startup founders on delivery organization, scaling teams, building PM functions from zero, and operational efficiency. Helping bridge the gap between vision and execution.</p>
+        <div class="service-tags">
+          <span class="service-tag">Startup consulting</span>
+          <span class="service-tag">COO advisory</span>
+          <span class="service-tag">Delivery audit</span>
+          <span class="service-tag">Scaling teams</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -500,7 +621,7 @@
     <div class="timeline">
 
       <div class="timeline-item">
-        <div class="timeline-period">2024 — Present</div>
+        <div class="timeline-period">2024 - Present</div>
         <div class="timeline-content">
           <h3>Senior Delivery Manager</h3>
           <div class="timeline-company">Grid Dynamics (NASDAQ: GDYN)</div>
@@ -509,7 +630,7 @@
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2022 — 2024</div>
+        <div class="timeline-period">2022 - 2024</div>
         <div class="timeline-content">
           <h3>Delivery Manager</h3>
           <div class="timeline-company">Grid Dynamics</div>
@@ -518,16 +639,16 @@
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2021 — 2022</div>
+        <div class="timeline-period">2021 - 2022</div>
         <div class="timeline-content">
           <h3>Delivery Manager</h3>
-          <div class="timeline-company">Grid Dynamics · Kharkiv, Ukraine</div>
-          <p class="timeline-desc">Established delivery management practices for the Ukrainian engineering hub. Successfully maintained 100% project continuity through the full-scale invasion in February 2022 — relocating team operations across Ukraine, Poland, USA, Armenia, and India.</p>
+          <div class="timeline-company">Grid Dynamics - Kharkiv, Ukraine</div>
+          <p class="timeline-desc">Established delivery management practices for the Ukrainian engineering hub. Successfully maintained 100% project continuity through the full-scale invasion in February 2022 - relocating team operations across Ukraine, Poland, USA, Armenia, and India.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2019 — 2021</div>
+        <div class="timeline-period">2019 - 2021</div>
         <div class="timeline-content">
           <h3>Technical Project Manager</h3>
           <div class="timeline-company">Valor Software</div>
@@ -536,29 +657,29 @@
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2017 — 2019</div>
+        <div class="timeline-period">2017 - 2019</div>
         <div class="timeline-content">
-          <h3>Lead Project Manager → Technical Project Manager</h3>
+          <h3>Lead Project Manager / Technical Project Manager</h3>
           <div class="timeline-company">MaybeWorks</div>
           <p class="timeline-desc">Grew from first PM hire to lead PM overseeing the full project portfolio of a 50-person company. Built PM processes from zero. Introduced Scrum + Kanban, improving on-time delivery from 30% to 70%.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2015 — 2017</div>
+        <div class="timeline-period">2015 - 2017</div>
         <div class="timeline-content">
           <h3>Quality Assurance Specialist</h3>
           <div class="timeline-company">MaybeWorks</div>
-          <p class="timeline-desc">Started career in QA — gaining deep understanding of SDLC, testing processes, and engineering workflows that became the foundation of my delivery management approach.</p>
+          <p class="timeline-desc">Started career in QA - gaining deep understanding of SDLC, testing processes, and engineering workflows that became the foundation of my delivery management approach.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-period">2013 — 2015</div>
+        <div class="timeline-period">2013 - 2015</div>
         <div class="timeline-content">
           <h3>Project Manager</h3>
           <div class="timeline-company">Variant Agro Build</div>
-          <p class="timeline-desc">First PM role — managing international B2B manufacturing orders with zero technical background. Coordinated structural engineers, technologists, and production workshops (stamping, welding, bending) for clients across Germany, France, Poland, Finland, and Romania. If you can manage a production floor with welders and international clients pulling in different directions, you can manage anything.</p>
+          <p class="timeline-desc">First PM role - managing international B2B manufacturing orders with zero technical background. Coordinated structural engineers, technologists, and production workshops (stamping, welding, bending) for clients across Germany, France, Poland, Finland, and Romania. If you can manage a production floor with welders and international clients pulling in different directions, you can manage anything.</p>
         </div>
       </div>
 
@@ -572,18 +693,18 @@
     <h2 class="section-title">Teaching & Coaching</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-period">2021 — 2022</div>
+        <div class="timeline-period">2021 - 2022</div>
         <div class="timeline-content">
           <h3>Project Management Coach</h3>
-          <div class="timeline-company">Telesens Academy · part-time</div>
+          <div class="timeline-company">Telesens Academy - part-time</div>
           <p class="timeline-desc">Designed PM curriculum covering Agile, Scrum, risk management, and stakeholder communication. Mentored 50+ students, 20+ of whom transitioned into PM roles.</p>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-period">2019 — 2020</div>
+        <div class="timeline-period">2019 - 2020</div>
         <div class="timeline-content">
           <h3>Agile / Scrum Coach</h3>
-          <div class="timeline-company">IT Education Academy (ITEA) · part-time</div>
+          <div class="timeline-company">IT Education Academy (ITEA) - part-time</div>
           <p class="timeline-desc">Taught Agile and Scrum fundamentals with hands-on project simulations. 7 cohorts completed over 1 year.</p>
         </div>
       </div>
@@ -596,7 +717,7 @@
   <section>
     <h2 class="section-title">Certifications</h2>
     <div class="certs-grid">
-      <span class="cert-tag">PMP — Project Management Professional</span>
+      <span class="cert-tag">PMP - Project Management Professional</span>
       <span class="cert-tag">SAFe 6.0 Practice Consultant (SPC)</span>
       <span class="cert-tag">Professional Scrum Master II (PSM II)</span>
       <span class="cert-tag">Professional Scrum Product Owner II (PSPO II)</span>
@@ -613,19 +734,19 @@
 
     <div class="edu-item">
       <div class="edu-degree">PhD in Computer Science</div>
-      <div class="edu-school">National Technical University "Kharkiv Polytechnic Institute" · 2019 — 2025</div>
+      <div class="edu-school">National Technical University "Kharkiv Polytechnic Institute" - 2019-2025</div>
       <div class="edu-note">Completed remotely during the full-scale war while working full-time and relocating to Poland.</div>
     </div>
 
     <div class="edu-item">
       <div class="edu-degree">Master's in Computer Science (IT Project Management)</div>
-      <div class="edu-school">National Technical University "Kharkiv Polytechnic Institute" · 2017 — 2018</div>
+      <div class="edu-school">National Technical University "Kharkiv Polytechnic Institute" - 2017-2018</div>
     </div>
 
     <div class="edu-item">
       <div class="edu-degree">Master's in Finance and Taxation</div>
-      <div class="edu-school">National Technical University "Kharkiv Polytechnic Institute" · 2012 — 2013</div>
-      <div class="edu-note">Dual background in finance and tech — enables P&L ownership and business-side fluency.</div>
+      <div class="edu-school">National Technical University "Kharkiv Polytechnic Institute" - 2012-2013</div>
+      <div class="edu-note">Dual background in finance and tech - enables P&L ownership and business-side fluency.</div>
     </div>
   </section>
 
@@ -654,7 +775,7 @@
 </main>
 
 <footer>
-  <p class="footer-text">Wrocław, Poland · © 2026 Hlib Sushko</p>
+  <p class="footer-text">Wroclaw, Poland - 2026 Hlib Sushko</p>
 </footer>
 
 </body>
